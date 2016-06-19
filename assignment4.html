@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript2</title>
+  <style type="text/css">
+    #submitbutton{
+      background: blue;
+      border:2px solid red;
+      height:50px;
+      width:150px;
+      margin: 25px;
+      padding: 3px;
+    }
+  
+    </style>
+  
+  
+	<script type="text/javascript"> 
+    function changeText(submitId){
+
+        var submit = document.getElementById(submitId);
+        if(submit.value == 'like')
+        	{ 
+            document.getElementById(submitId).style.backgroundColor = "#FF8000";
+        		submit.value = 'unlike';
+       		}
+       	else
+       	{
+          document.getElementById(submitId).style.backgroundColor = "#0000FF";
+       		submit.value = 'like'
+       	}
+       	return false;
+    };
+    function check()
+    {
+      var elem=document.getElementById("textfield");
+      var val=elem.value;
+      if(!(/^0|[1-9][0-9]*$/.test(val) || val==" " || val==""))
+      {
+        elem.style.backgroundColor='red';
+        elem.setAttribute('readonly','true');
+        setTimeout(function(){elem.removeAttribute('readonly'); elem.style.backgroundColor='white';},5000);
+      }
+    }
+</script>
+
+</head>
+<body>
+<form method="get" action="">
+  <p>    Ques 1      </p>
+  <input type="submit" id="submitbutton" value="like"  onclick="return changeText('submitbutton');" /> 
+  <p>------------------------------------------</p>
+</form>
+<br>
+<p>    Ques 2      </p>
+</div>
+        <hr style="width:200px" align="left">
+        <table border="1" >
+            <tr class="hide" >
+                <td width="40" height="20">row 1</td>
+            </tr>
+            <tr>
+                <td width="40" height="20">row 2</td>
+            </tr>
+            <tr class="hide">
+                <td width="40" height="20">row 3</td>
+            </tr>
+            <tr>
+                <td width="40" height="20">row 4</td>
+            </tr>
+            <tr class="hide">
+                <td width="40" height="20">row 5</td>
+            </tr>
+        </table><br>
+        <button type="button" name="HideRows">Hide Odd Rows</button>
+        <script type="text/javascript" src="hideOddRows.js"></script>
+<br>
+<p> ------------------------------------------</p>
+<br>
+
+<p>    Ques 3       </p>
+Enter the numbers:<input type="text" id="textfield" onkeyup="check();">
+
+
+</body>
+</html>
